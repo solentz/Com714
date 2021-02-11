@@ -14,6 +14,9 @@ class Human:
     def __str__(self) -> str:
         return f'{self.name} is {self.age} years old.'
 
+    def grow(self) -> None:
+        self.age += 1
+
     def eat(self, amount) -> int:
         potential_energy = self.energy + amount
 
@@ -24,8 +27,14 @@ class Human:
             self.energy = potential_energy
             return self.energy - Human.MAX_ENERGY
 
-    def grow(self) -> None:
-        self.age += 1
+    def reproduce(self) -> bool:
+        potential_energy = self.energy - energy
+
+        if (potential_energy >= Human.REPRODUCE_ENERGY):
+            self.energy = potential_energy
+            return True
+        else:
+            return False
 
     def move(self, distance: int) -> bool:
         potential_energy = self.energy - distance
