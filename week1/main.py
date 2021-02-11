@@ -34,3 +34,10 @@ def q3():
 
 q3()
 
+
+def q4(what, where):
+    print("i'm friends with the monster that's under my bed")
+    explain("monster", "bed")
+
+
+q4()
