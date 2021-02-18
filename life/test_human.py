@@ -27,3 +27,5 @@ class TestHuman(unittest.TestCase):
          human_ziga = Human("Ziga")
          human_ziga.grow()
          self.assertEqual(human_ziga.age, 1, "Age should be 1")
+
+
