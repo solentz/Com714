@@ -48,3 +48,6 @@ class Human:
             return True
         else:
             return False
+
+    def move(self):
+        return if self.energy >= required_energy
