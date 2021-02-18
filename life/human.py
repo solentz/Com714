@@ -25,12 +25,15 @@ class Human:
         self.age = self.age + 1
         # self.age += 1
 
+
+    def eat(self, amount) -> int:
+        potential_energy = self.energy + amount
         if (potential_energy >= Human.MAX_ENERGY):
             left_over_amount = potential_energy - Human.MAX_ENERGY
             self.energy = Human.MAX_ENERGY
             return left_over_amount
         else:
-            left_over_amount = Human.MAX_ENERGY - potential_energy
+            left_over_amount = potential_energy - Human.MAX_ENERGY
             return left_over_amount
 
     def reproduce(self) -> bool:

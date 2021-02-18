@@ -7,11 +7,11 @@ class TestHuman(unittest.TestCase):
     def test_eat(self) -> None:
         # energy is full and try to eat
         human_ziga = Human("Ziga")
-        self.assertEqual(human_ziga.eat(20), 10, "Excess should 20.")
+        self.assertEqual(human_ziga.eat(20), 20, "Excess should 20.")
 
         # energy is below 100 and eat more than required
         human_ziga = Human("Ziga", energy=90)
-        self.assertEqual(human_ziga.eat(20), o, "Excess should 10.")
+        self.assertEqual(human_ziga.eat(20), 10, "Excess should 10.")
 
         # energy is below 100 and eat more than required
         human_ziga = Human("Ziga", energy=80)
@@ -22,7 +22,7 @@ class TestHuman(unittest.TestCase):
         self.assertEqual(human_ziga.eat(20), -10, "Excess should be -10.")
 
 
-    def test_grow(selfself):
+    def test_grow(self):
          # new born and age
          human_ziga = Human("Ziga")
          human_ziga.grow()
