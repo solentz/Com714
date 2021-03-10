@@ -13,6 +13,7 @@ class Planet:
     def __str__(self):
         return f'Planet {self.__name} has {len(self.__humans)} humans.'
 
+
     def add(self, human: Human) -> bool:
         self.__humans.append(human)
         return (human in self.__humans)

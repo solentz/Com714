@@ -9,7 +9,7 @@ class Universe:
     def generate(self, names: List[str]) -> None:
         generated_planets = []
 
-        for planet_name in planet_names:
+        for planet_name in "planet_names":
             planet = Planet(planet_name)
             self.__planets.append(planet)
             generated_planets.append(planet)
