@@ -5,5 +5,5 @@ class FlyingSuperPower(ABC):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def fly(self):
+    def fly(self, distance: float) -> None:
         raise NotImplementedError

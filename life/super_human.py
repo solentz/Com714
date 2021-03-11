@@ -5,10 +5,10 @@ from invisibility_super_power import InvisibilitySuperPower
 
 class SuperHuman(Human, FlyingSuperPower, InvisibilitySuperPower):
 
-    def __init__(self):
-        pass
+    def __init__(self, name: str) -> None:
+        super(Human, self).__init__(name)
 
-    def fly(self):
+    def fly(self, distance: float) -> None:
         print("I am flying!!!")
 
     def turn_invisible(self):

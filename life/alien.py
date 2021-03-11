@@ -5,14 +5,20 @@ from livingthing import LivingThing
 
 class Alien(LivingThing, FlyingSuperPower, InvisibilitySuperPower):
 
-    def __init__(self):
+    def __init__(self, name, powers):
+        self.SUPER_POWERS = powers
+        super(LivingThing, self).__init__(name)
         pass
 
-    def fly(self):
-        print("I am flying!!!")
+    def fly(self, distance: float) -> None:
+        if "fly" in self.SUPER_POWERS:
+            print("i am flying")
+        else:
+            print("can't fly yet!")
+        pass
 
     def turn_invisible(self):
-        print("I am now invisible")
+        pass
 
     def turn_visible(self):
-        print("I am now visible")
+        pass
