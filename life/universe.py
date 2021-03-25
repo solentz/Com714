@@ -1,19 +1,37 @@
 from planet import Planet
 from typing import List
+from non_planet import NonPlanet
+
+import random
+
 
 class Universe:
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.__planets = []
+        self.__non_planet = []
 
-    def generate(self, names: List[str]) -> None:
-        generated_planets = []
+    def __repr__(self) -> str:
+        return f"universe(planets={len(self.__planets)})"
 
-        for planet_name in "planet_names":
-            planet = Planet(planet_name)
+    def __str__(self) -> str:
+        return f"The universe has {len(self.__planets)} planets."
+
+    def generate_planet(self, names: List[str]) -> None:
+        for name in names:
+            planet = Planet(name)
             self.__planets.append(planet)
-            generated_planets.append(planet)
+
+    def generate_non_planet(self, names: List[str]) -> None:
+        for name in names:
+            non_planet = NonPlanet(name)
+            self.__planets.append(non_planet)
 
     def display(self) -> None:
+        print("The planets:")
         for planet in self.__planets:
-            print(f"planet: {planet.__name}), Population: {planet.population()}")
+            print(planet)
+
+        print("The non planets:")
+        for non_planet in self.__non_planet:
+            print(non_planet)
