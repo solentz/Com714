@@ -1,26 +1,24 @@
 from livingthing import LivingThing
 
+
 class Plant(LivingThing):
-    MAX_ENERGY = 1
 
     def __init__(self,name: str) -> None:
         super().__init__(name)
 
-
     def __repr__(self) -> str:
-        return f'plant(name={self.__energy}, {self.__name} age={self.age}.'
+        return f"plant(name={self._name}, age={self._age}, energy={self._energy}"
 
-    def __str__(self) -> str:
-        return f'The plant is called (name={self.__name}, age{self.__age} years old has energy={self.energy}.'
+    def __str__(self):
+        return f"The plant is called {self._name}, is {self._age} years old and has{self._energy} energy."
 
+    def absorb(self, energy: int) -> int:
+        potential_energy = self._energy + energy
 
-    def absorb(self, energy:int) -> int:
-        potential_energy = self._energy +energy
-
-        if potential_energy > LivingThing.MAX_ENERGY
+        if potential_energy > LivingThing.MAX_ENERGY:
             self._energy = LivingThing.MAX_ENERGY
             return  potential_energy - self._energy
 
         self._energy = potential_energy
-            return 0
+            return False
 

@@ -1,29 +1,36 @@
-from human import Human
+from livingthing import LivingThing
 
 
 class Planet:
 
-    def __init__(self, name: str = ''):
-        self.__humans = []
-        self.__name = name
+    def __init__(self, name: str) -> None:
+        self.__name: str = name
+        self.living_thing = []
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return f'planet(name={self.__name}, humans={self.__humans})'
 
     def __str__(self):
         return f'Planet {self.__name} has {len(self.__humans)} humans.'
 
+    def add(self, living_thing: LivingThing) -> bool:
+        if living_thing:
+            self.__living_thing.append(living_thing)
+            return True
+        return False
 
-    def add(self, human: Human) -> bool:
-        self.__humans.append(human)
-        return (human in self.__humans)
+    def remove(self, living_thing: LivingThing) -> bool:
+        if living_thing in self.__living_things:
+            self.__living_things.remove(living_thing)
+            return True
+        return False
 
-    def has(self, human: Human) -> bool:
-        return (human in self.__humans)
+    def has(self, living_thing: LivingThing) -> bool:
+        if living_thing in self.__living_things:
+            return True
+        return False
 
     def population(self) -> int:
-        return len(self.__humans)
+        return len(self.__living_things)
 
-    def remove(self, human: Human) -> bool:
-        self.__humans.remove(human)
-        return (human in self.__humans)
+
