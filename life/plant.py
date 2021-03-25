@@ -3,7 +3,7 @@ from livingthing import LivingThing
 
 class Plant(LivingThing):
 
-    def __init__(self,name: str) -> None:
+    def __init__(self, name: str) -> None:
         super().__init__(name)
 
     def __repr__(self) -> str:
@@ -17,8 +17,7 @@ class Plant(LivingThing):
 
         if potential_energy > LivingThing.MAX_ENERGY:
             self._energy = LivingThing.MAX_ENERGY
-            return  potential_energy - self._energy
+            return potential_energy - self._energy
 
-        self._energy = potential_energy
+            self._energy = potential_energy
             return False
-
