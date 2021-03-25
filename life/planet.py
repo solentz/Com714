@@ -5,13 +5,13 @@ class Planet:
 
     def __init__(self, name: str) -> None:
         self.__name: str = name
-        self.living_thing = []
+        self.__living_thing = []
 
     def __repr__(self) -> str:
-        return f'planet(name={self.__name}, humans={self.__humans})'
+        return f"planet(name={self.__name}, inhabitants={len(self.__living_thing)})"
 
-    def __str__(self):
-        return f'Planet {self.__name} has {len(self.__humans)} humans.'
+    def __str__(self) -> str:
+        return f"Planet {self.__name} has {len(self.__living_thing)} humans."
 
     def add(self, living_thing: LivingThing) -> bool:
         if living_thing:
@@ -26,11 +26,11 @@ class Planet:
         return False
 
     def has(self, living_thing: LivingThing) -> bool:
-        if living_thing in self.__living_things:
+        if living_thing in self.__living_thing:
             return True
         return False
 
     def population(self) -> int:
-        return len(self.__living_things)
+        return len(self.__living_thing)
 
 
