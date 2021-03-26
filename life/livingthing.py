@@ -3,7 +3,7 @@
 class LivingThing:
 
 
-    MAX_ENERGY=100
+    MAX_ENERGY = 100
     REPRODUCE_ENERGY = 1
 
 
@@ -11,9 +11,9 @@ class LivingThing:
     # initialise the state of the instance
     def __init__(self,name: str) -> None:
         # instance attributes/varibles
-        self.__age = 0
-        self.__energy = 100
-        self.__name = name
+        self._age = 0
+        self._energy = 100
+        self._name = name
 
 
     def __repr__(self) -> str:

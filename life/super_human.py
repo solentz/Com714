@@ -1,18 +1,17 @@
 from flyingsuperpower import FlyingSuperPower
 from human import Human
-from invisibility_super_power import InvisibilitySuperPower
 
+class SuperHuman(Human, FlyingSuperPower):
 
-class SuperHuman(Human, FlyingSuperPower, InvisibilitySuperPower):
+    MIN_FLY_ENERGY = 5
 
     def __init__(self, name: str) -> None:
         super(Human, self).__init__(name)
 
     def fly(self, distance: float) -> None:
-        print("I am flying!!!")
-
-    def turn_invisible(self):
-        print("I am now invisible")
-
-    def turn_visible(self):
-        print("I am now visible")
+        if self._energy >= SuperHuman.MIN_FLY_ENERGY:
+            if self._energy >= distance:
+                print("I am flying")
+                self._energy -= distance
+            else:
+                print("It's too far to fly")
