@@ -20,8 +20,8 @@ class Planet:
         return False
 
     def remove(self, living_thing: LivingThing) -> bool:
-        if living_thing in self.__living_things:
-            self.__living_things.remove(living_thing)
+        if living_thing in self.__living_thing:
+            self.__living_thing.remove(living_thing)
             return True
         return False
 

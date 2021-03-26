@@ -3,6 +3,8 @@ from tkinter import messagebox
 
 from universe import Universe
 
+from planet_gui import PlanetGui
+
 
 class UniverseGui(Tk):
 
@@ -44,6 +46,14 @@ class UniverseGui(Tk):
 
         # style the component
         self.planet_button.configure(text="Add Planet")
+
+        # assign events
+        self.planet_button.bind("<ButtonRelease-1>", self.planet_button_clicked)
+
+    def planet_button_clicked(self, event):
+        self.destroy()
+        self.add_planet_gui = PlanetGui()
+        self.add_planet_gui.mainloop()
 
 
 if __name__ == '__main__':
